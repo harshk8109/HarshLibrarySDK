@@ -7,9 +7,18 @@
 
 import UIKit
 
-class SDKMainViewController: UIViewController {
+public class SDKMainViewController: UIViewController {
 
-    public override func viewDidLoad() {
+    // Public initializer REQUIRED for SPM
+        public init() {
+            super.init(nibName: nil, bundle: .module)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        public override func viewDidLoad() {
             super.viewDidLoad()
 
             view.backgroundColor = .systemIndigo
@@ -27,5 +36,4 @@ class SDKMainViewController: UIViewController {
                 label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
         }
-
-}
+    }
